@@ -1,3 +1,3 @@
 # phonebook-frontend
 
-test-imani
+test2-imani
