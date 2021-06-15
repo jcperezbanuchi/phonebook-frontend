@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/Header';
 import NewForm from './components/NewForm';
 import Contact from './components/Contact';
+import Modal from './components/Modal'
 
 let baseURL;
 
@@ -27,6 +28,7 @@ class App extends Component {
 
     this.toggleForm = this.toggleForm.bind(this)
     this.deleteContact = this.deleteContact.bind(this)
+    this.showModal = this.showModal.bind(this)
   }
   componentDidMount() {
     this.getContacts()
@@ -113,6 +115,13 @@ class App extends Component {
       })
   }
 
+  showModal(e) {
+    this.setState({
+      showModal: !this.state.showModal,
+    })
+    console.log(e.currentTarget)
+  }
+
   render() {
     return (
       <div className="container">
@@ -131,7 +140,14 @@ class App extends Component {
               {this.state.contacts.map(contact => {
                 return (
                   <tr key={contact._id}>
-                    <td><a href={contact.lastName}>{contact.firstName}</a></td>
+                    <td>
+                        <Modal
+                          contact={contact}
+                          showModal={this.state.showModal}
+                          closeModal={this.showModal}
+                        />
+                        <div onClick={(contact) => {this.showModal(contact)}}>{contact.firstName} {contact.lastName}</div>
+                    </td>
                     <td><button className="btn btn-info" onClick={() => this.toggleForm(contact)}>Edit</button></td>
                     <td ><button className="btn btn-danger" onClick={() => this.deleteContact(contact._id)}>Delete</button></td>
                   </tr>
@@ -140,6 +156,12 @@ class App extends Component {
               }
             </tbody>
           </table>
+          {/* <Modal
+            contacts={this.state.contacts}
+            showModal={this.state.showModal}
+            closeModal={this.showModal}
+          /> */}
+
         </div>
       </div >
     )
