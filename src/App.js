@@ -4,7 +4,15 @@ import NewForm from './components/NewForm';
 import Contact from './components/Contact';
 import Modal from './components/Modal'
 
-const baseURL = 'http://localhost:3003';
+let baseURL;
+
+if (process.env.NODE_ENV === 'development') {
+  baseURL = 'http://localhost:3003';
+} else {
+  baseURL = 'https://phonebook-backend-project3.herokuapp.com';
+}
+
+console.log('current base URL:', baseURL);
 
 
 class App extends Component {
@@ -33,7 +41,7 @@ class App extends Component {
   }
 
   getContacts() {
-    fetch(baseURL + '/contacts')
+    fetch(`${baseURL}/contacts`)
       .then(data => { return data.json() }, err => console.log(err))
       .then(parsedData => this.setState({ contacts: parsedData }), err => console.log(err))
   }
@@ -118,7 +126,7 @@ class App extends Component {
     return (
       <div className="container">
         <Header />
-        
+
         {
           this.state.showForm
             ?

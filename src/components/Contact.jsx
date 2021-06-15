@@ -1,6 +1,12 @@
 import { Component } from 'react';
 
-const baseURL = 'http://localhost:3003';
+let baseURL;
+
+if (process.env.NODE_ENV === 'development') {
+    baseURL = 'http://localhost:3003';
+} else {
+    baseURL = 'https://phonebook-backend-project3.herokuapp.com';
+}
 
 
 class Contact extends Component {
@@ -38,7 +44,7 @@ class Contact extends Component {
         })
     }
     handleSubmit(event) {
-        fetch(baseURL + '/contacts' + this.props.contactUpdate._id, {
+        fetch(`${baseURL}/contacts/${this.props.contactUpdate._id}`, {
             method: 'PUT',
             body: JSON.stringify({
                 firstName: this.state.firstName,
@@ -73,25 +79,25 @@ class Contact extends Component {
                 {/* <h3>
                     Edit Contact
                 </h3> */}
-            <form onSubmit={this.handleSubmit}>
-                <label htmlFor="firstName"></label>
-                <input type="text" name="firstName" id="firstName" value={this.state.firstName} onChange={this.handleChange} placeholder={this.state.firstName} />
-                
-                <label htmlFor="lastName"></label>
-                <input type="text" name="lastName" id="lastName" value={this.state.lastName} onChange={this.handleChange} placeholder={this.state.lastName} />
-                
-                <label htmlFor="phoneNumber"></label>
-                <input type="text" name="phoneNumber" id="phoneNumber" value={this.state.phoneNumber} onChange={this.handleChange} placeholder={this.state.phoneNumber} />
-                
-                <label htmlFor="address"></label>
-                <input type="text" name="address" id="address" value={this.state.address} onChange={this.handleChange} placeholder={this.state.address} />
+                <form onSubmit={this.handleSubmit}>
+                    <label htmlFor="firstName"></label>
+                    <input type="text" name="firstName" id="firstName" value={this.state.firstName} onChange={this.handleChange} placeholder={this.state.firstName} />
 
-                <label htmlFor="socialLinks"></label>
-                <input type="text" name="socialLinks" id="socialLinks" value={this.state.socialLinks} onChange={this.handleChange} placeholder={this.state.socialLinks} />
-                
-                <input className="btn btn-dark" type="submit" value="Save Changes" />
+                    <label htmlFor="lastName"></label>
+                    <input type="text" name="lastName" id="lastName" value={this.state.lastName} onChange={this.handleChange} placeholder={this.state.lastName} />
 
-            </form>
+                    <label htmlFor="phoneNumber"></label>
+                    <input type="text" name="phoneNumber" id="phoneNumber" value={this.state.phoneNumber} onChange={this.handleChange} placeholder={this.state.phoneNumber} />
+
+                    <label htmlFor="address"></label>
+                    <input type="text" name="address" id="address" value={this.state.address} onChange={this.handleChange} placeholder={this.state.address} />
+
+                    <label htmlFor="socialLinks"></label>
+                    <input type="text" name="socialLinks" id="socialLinks" value={this.state.socialLinks} onChange={this.handleChange} placeholder={this.state.socialLinks} />
+
+                    <input className="btn btn-dark" type="submit" value="Save Changes" />
+
+                </form>
             </div>
         )
     }
