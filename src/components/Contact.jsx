@@ -1,6 +1,12 @@
 import { Component } from 'react';
 
-const baseURL = 'http://localhost:3003';
+let baseURL;
+
+if (process.env.NODE_ENV === 'development') {
+    baseURL = 'http://localhost:3003';
+} else {
+    baseURL = 'https://phonebook-backend-project3.herokuapp.com/';
+}
 
 
 class Contact extends Component {
