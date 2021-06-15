@@ -33,8 +33,11 @@ class NewForm extends Component {
       method: 'POST',
       body: JSON.stringify(
         {
-          firstName: this.state.firstName, lastName: this.state.lastName,
-          phoneNumber: this.state.phoneNumber, address: this.state.address, socialLinks: this.state.socialLinks
+          firstName: this.state.firstName,
+          lastName: this.state.lastName,
+          phoneNumber: this.state.phoneNumber,
+          address: this.state.address,
+          socialLinks: this.state.socialLinks
         }),
       headers: {
         'Content-Type': 'application/json'
@@ -58,13 +61,13 @@ class NewForm extends Component {
         <h5>Add A New Contact</h5>
         <form className="form mb-5" onSubmit={this.handleSubmit}>
           <label htmlFor="firstName"></label>
-          <input type="text" id="firstName" name="firstName" onChange={this.handleChange} value={this.state.firstName} placeholder="Add First Name" />
+          <input type="text" id="firstName" name="firstName" onChange={this.handleChange} value={this.state.firstName} placeholder="Add First Name" required />
 
           <label htmlFor="lastName"></label>
-          <input className="mb-1" type="text" id="lastName" name="lastName" onChange={this.handleChange} value={this.state.lastName} placeholder="Add Last Name" />
+          <input className="mb-1" type="text" id="lastName" name="lastName" onChange={this.handleChange} value={this.state.lastName} placeholder="Add Last Name" required />
 
           <label htmlFor="phoneNumber"></label>
-          <input className="mb-1" type="text" id="phoneNumber" name="phoneNumber" onChange={this.handleChange} value={this.state.phoneNumber} placeholder="Add Phone Number" />
+          <input className="mb-1" type="text" id="phoneNumber" name="phoneNumber" onChange={this.handleChange} value={this.state.phoneNumber} placeholder="Add Phone Number" required />
 
           <label htmlFor="address"></label>
           <input className="mb-1" type="text" id="address" name="address" onChange={this.handleChange} value={this.state.address} placeholder="Add Address" />
