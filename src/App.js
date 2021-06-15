@@ -39,7 +39,7 @@ class App extends Component {
   }
 
   getContacts() {
-    fetch(baseURL + '/contacts')
+    fetch(`${baseURL}/contacts`)
       .then(data => { return data.json() }, err => console.log(err))
       .then(parsedData => this.setState({ contacts: parsedData }), err => console.log(err))
   }
