@@ -29,7 +29,7 @@ class NewForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    fetch(baseURL + '/contacts', {
+    fetch(`${baseURL}/contacts`, {
       method: 'POST',
       body: JSON.stringify(
         {
