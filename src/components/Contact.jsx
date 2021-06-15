@@ -44,7 +44,7 @@ class Contact extends Component {
         })
     }
     handleSubmit(event) {
-        fetch(`${baseURL}/contacts/this.props.contactUpdate._id`, {
+        fetch(`${baseURL}/contacts/${this.props.contactUpdate._id}`, {
             method: 'PUT',
             body: JSON.stringify({
                 firstName: this.state.firstName,
