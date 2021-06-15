@@ -3,7 +3,15 @@ import Header from './components/Header';
 import NewForm from './components/NewForm';
 import Contact from './components/Contact';
 
-const baseURL = 'http://localhost:3003';
+let baseURL;
+
+if (process.env.NODE_ENV === 'development') {
+  baseURL = 'http://localhost:3003';
+} else {
+  baseURL = 'https://phonebook-backend-project3.herokuapp.com/';
+}
+
+console.log('current base URL:', baseURL);
 
 
 class App extends Component {
