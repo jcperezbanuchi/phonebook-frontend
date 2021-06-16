@@ -58,27 +58,44 @@ class NewForm extends Component {
   render() {
     return (
       <div>
-        <h5>Add A New Contact</h5>
-        <form className="form mb-5" onSubmit={this.handleSubmit}>
-          <label htmlFor="firstName"></label>
-          <input type="text" id="firstName" name="firstName" onChange={this.handleChange} value={this.state.firstName} placeholder="Add First Name" required />
+      <h5>Add A New Contact</h5>
+  <form action="" className=" mb-5" onSubmit={this.handleSubmit}>
 
-          <label htmlFor="lastName"></label>
-          <input className="mb-1" type="text" id="lastName" name="lastName" onChange={this.handleChange} value={this.state.lastName} placeholder="Add Last Name" required />
+    
+  <div className="form-row mr-3 ml-3">
+    <div className="form-group col">
+      <label htmlFor="firstName"></label>
+      <input  className="form-control" type="text" id="firstName" name="firstName" onChange={this.handleChange} value={this.state.firstName} placeholder="First Name"/>
+    </div>
 
-          <label htmlFor="phoneNumber"></label>
-          <input className="mb-1" type="text" id="phoneNumber" name="phoneNumber" onChange={this.handleChange} value={this.state.phoneNumber} placeholder="Add Phone Number" required />
+    <div className="form-group col">
+      <label htmlFor="lastName"></label>
+      <input className="form-control" type="text" id="lastName" name="lastName" onChange={this.handleChange} value={this.state.lastName} placeholder="Last Name"/>
+    </div>
+  </div>
 
-          <label htmlFor="address"></label>
-          <input className="mb-1" type="text" id="address" name="address" onChange={this.handleChange} value={this.state.address} placeholder="Add Address" />
+  <div className="form-group mr-3 ml-3">
+      <label htmlFor="phoneNumber"></label>
+      <input className="form-control" type="text" id="phoneNumber" name="phoneNumber" onChange={this.handleChange} value={this.state.phoneNumber} placeholder="Phone Number: xxx-xxx-xxxx"/>
+  </div>
 
-          <label htmlFor="socialLinks"></label>
-          <input className="mb-1" type="text" id="socialLinks" name="socialLinks" onChange={this.handleChange} value={this.state.socialLinks} placeholder="Add Social" />
 
+  <div className="form-group mr-3 ml-3">
+      <label htmlFor="address"></label>
+      <input className="form-control mb-1" type="text" id="address" name="address" onChange={this.handleChange} value={this.state.address} placeholder="Street Address"/>
+  </div>
 
-          <input className="add btn btn-dark" type="submit" value="Add to Phonebook" />
-        </form>
-      </div>
+  <div className="form-group mr-3 ml-3">        
+      <label htmlFor="socialLinks"></label>
+      <input className="form-control mb-5" type="text" id="socialLinks" name="socialLinks" onChange={this.handleChange} value={this.state.socialLinks} placeholder="Social Link"/>
+  </div>
+
+  <div className="form-group mr-5 ml-5">
+      <input className="form-control mb-3 btn btn-dark" type="submit" value="Add to Phonebook"/>
+  </div>
+
+  </form>
+  </div>
 
     )
   }
