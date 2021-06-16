@@ -140,16 +140,19 @@ class App extends Component {
               {this.state.contacts.map(contact => {
                 return (
                   <tr key={contact._id}>
-                    <td>
-                        <Modal
-                          contact={contact}
-                          showModal={this.state.showModal}
-                          closeModal={this.showModal}
-                        />
-                        <div className="name" onClick={(contact) => {this.showModal(contact)}}>{contact.firstName} {contact.lastName}</div>
-                    </td>
-                    <td><button className="btn btn-info" onClick={() => this.toggleForm(contact)}>Edit</button></td>
-                    <td ><button className="btn btn-danger" onClick={() => this.deleteContact(contact._id)}>Delete</button></td>
+                      <td>
+                          <Modal
+                            contact={contact}
+                            showModal={this.state.showModal}
+                            closeModal={this.showModal}
+                          />
+                          <div className="name" onClick={(contact) => {this.showModal(contact)}}>{contact.firstName} {contact.lastName}</div>
+                      </td>
+                      <td>{contact.phoneNumber}</td>
+                      <td>{contact.address}</td>
+                      <td>{contact.socialLinks}</td>
+                      <td><button className="btn btn-info" onClick={() => this.toggleForm(contact)}>Edit</button></td>
+                      <td ><button className="btn btn-danger" onClick={() => this.deleteContact(contact._id)}>Delete</button></td>
                   </tr>
                 )
               })

@@ -30,8 +30,9 @@ table{
   /* background-color: aquamarine; */
   background-image: url("https://i.ibb.co/KXxLYcw/3693187.jpg" );
   background-size: cover;
-  width: 400px;
+  min-width: 400px;
   border: solid 2px black;
+  color: white;
 } 
 
 .name{
@@ -62,6 +63,14 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+.modal-content {
+  background-color: #75b58a;
+  margin: 15% auto;
+  padding: 20px;
+  border: 2px solid black;
+  width: 80%;
+  min-height: 300px;
+}
 
 
 
