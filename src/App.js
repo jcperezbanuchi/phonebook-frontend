@@ -148,9 +148,9 @@ class App extends Component {
                           />
                           <div className="name" onClick={(contact) => {this.showModal(contact)}}>{contact.firstName} {contact.lastName}</div>
                       </td>
-                      <td>{contact.phoneNumber}</td>
-                      <td>{contact.address}</td>
-                      <td>{contact.socialLinks}</td>
+                      <td className="phone">{contact.phoneNumber}</td>
+                      <td className="address">{contact.address}</td>
+                      <td className="social">{contact.socialLinks}</td>
                       <td><button className="btn btn-info" onClick={() => this.toggleForm(contact)}>Edit</button></td>
                       <td ><button className="btn btn-danger" onClick={() => this.deleteContact(contact._id)}>Delete</button></td>
                   </tr>

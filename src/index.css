@@ -35,13 +35,17 @@ table{
   color: white;
 } 
 
-.name{
+/* .name{
   color: white;
   font-weight: bold;
-}
+} */
+
+
 
 td{
   padding: 10px;
+  color: white;
+  font-weight: bold;
 }
 
 body {
