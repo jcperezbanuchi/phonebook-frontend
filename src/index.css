@@ -7,7 +7,7 @@ h1{
   /* font-family: 'Anton', sans-serif; */
   font-family: 'IBM Plex Mono', monospace;
   text-align: center;
-  font-size: 60px;
+  font-size: 70px;
   color: white;
 }
 
@@ -76,7 +76,22 @@ body {
   min-height: 300px;
 }
 
+.login{
+  width: 300px;
+  margin: auto;
+}
 
+.user-name{
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.password{
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+}
 
 
 
