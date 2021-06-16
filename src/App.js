@@ -146,7 +146,7 @@ class App extends Component {
                           showModal={this.state.showModal}
                           closeModal={this.showModal}
                         />
-                        <div onClick={(contact) => {this.showModal(contact)}}>{contact.firstName} {contact.lastName}</div>
+                        <div className="name" onClick={(contact) => {this.showModal(contact)}}>{contact.firstName} {contact.lastName}</div>
                     </td>
                     <td><button className="btn btn-info" onClick={() => this.toggleForm(contact)}>Edit</button></td>
                     <td ><button className="btn btn-danger" onClick={() => this.deleteContact(contact._id)}>Delete</button></td>
