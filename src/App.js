@@ -3,6 +3,8 @@ import Header from './components/Header';
 import NewForm from './components/NewForm';
 import Contact from './components/Contact';
 import Modal from './components/Modal'
+import User from './components/User'
+
 
 let baseURL;
 
@@ -21,7 +23,8 @@ class App extends Component {
     this.state = {
       contacts: [],
       showForm: false,
-      contactUpdate: {}
+      contactUpdate: {},
+      showLogin: true
     }
     this.handleAddContact = this.handleAddContact.bind(this)
     this.updateContact = this.updateContact.bind(this)
@@ -122,10 +125,20 @@ class App extends Component {
     console.log(e.currentTarget)
   }
 
+  toggleLogin() {
+    this.setState({
+      showLogin: false
+    })
+  }
+
+
   render() {
     return (
       <div className="container">
         <Header />
+
+        <User />
+
 
         {
           this.state.showForm
@@ -134,25 +147,26 @@ class App extends Component {
             :
             <NewForm className="new-form" handleAddContact={this.handleAddContact} />
         }
+
         <div className="form">
           <table>
             <tbody>
               {this.state.contacts.map(contact => {
                 return (
                   <tr key={contact._id}>
-                      <td>
-                          <Modal
-                            contact={contact}
-                            showModal={this.state.showModal}
-                            closeModal={this.showModal}
-                          />
-                          <div className="name" onClick={(contact) => {this.showModal(contact)}}>{contact.firstName} {contact.lastName}</div>
-                      </td>
-                      <td className="phone">{contact.phoneNumber}</td>
-                      <td className="address">{contact.address}</td>
-                      <td className="social">{contact.socialLinks}</td>
-                      <td><button className="btn btn-info" onClick={() => this.toggleForm(contact)}>Edit</button></td>
-                      <td ><button className="btn btn-danger" onClick={() => this.deleteContact(contact._id)}>Delete</button></td>
+                    <td>
+                      <Modal
+                        contact={contact}
+                        showModal={this.state.showModal}
+                        closeModal={this.showModal}
+                      />
+                      <div className="name" onClick={(contact) => { this.showModal(contact) }}>{contact.firstName} {contact.lastName}</div>
+                    </td>
+                    <td className="phone">{contact.phoneNumber}</td>
+                    <td className="address">{contact.address}</td>
+                    <td className="social">{contact.socialLinks}</td>
+                    <td><button className="btn btn-info" onClick={() => this.toggleForm(contact)}>Edit</button></td>
+                    <td ><button className="btn btn-danger" onClick={() => this.deleteContact(contact._id)}>Delete</button></td>
                   </tr>
                 )
               })
@@ -166,6 +180,7 @@ class App extends Component {
           /> */}
 
         </div>
+
       </div >
     )
   }
