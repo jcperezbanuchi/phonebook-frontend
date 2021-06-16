@@ -42,14 +42,21 @@ export default class User extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="username">UserName:</label>
-                    <input type="text" name="username" placeholder="Username" required />
+                <form className="login mb-5" onSubmit={this.handleSubmit}>
 
-                    <label htmlFor="password">Password:</label>
-                    <input type="password" name="username" placeholder="Username" required />
+                    <div className="form-group mr-2 ml-2">
+                        <label className="user-name" htmlFor="username"></label>
+                        <input className="form-control" type="text" name="username" placeholder="Username" required />
+                    </div>
 
-                    <input type="submit" value="Log In" />
+                    <div className="form-group mb-4 mr-2 ml-2">
+                        <label className="password" htmlFor="password"></label>
+                        <input className="form-control mb-3" type="password" name="username" placeholder="Password" required />
+                    </div>
+
+                    <div className="form-group mr-5 ml-5">
+                        <input className="form-control" type="submit" value="Log In" />
+                    </div>
                 </form>
             </div>
         )
