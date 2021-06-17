@@ -127,7 +127,7 @@ class App extends Component {
 
   toggleLogin() {
     this.setState({
-      showLogin: false
+      showLogin: !this.state.showLogin
     })
   }
 
@@ -137,7 +137,11 @@ class App extends Component {
       <div className="container">
         <Header />
 
-        <User />
+
+
+        <button onClick={this.toggleLogin}>Login</button>
+
+        {this.state.showLogin && <User />}
 
 
         {
