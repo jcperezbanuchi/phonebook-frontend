@@ -42,7 +42,7 @@ At this point in our app, we're able to render our login inputs, add new contact
 <br>
 <h4>Unsolved Problems</h4>
 <li>Login authentication-being able to render only our login inputs before displaying other components.</li>
-<li>Modal-attempted to create a modal but ran into issues when incoporating Bootstrap.</li>
+<li>Modal-attempted to create a modal but ran into issues when incorporating Bootstrap.</li>
 <br>
 <h4>Notes To Self
 <ul>

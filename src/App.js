@@ -148,13 +148,16 @@ class App extends Component {
     return (
       <div className="container">
         <Header />
-
-        <button onClick={this.toggleLogin}>Login</button>
+      <div className="form-row mr-5 mb-5">
+        <div className="form-group col">
+        <button className="form-control login-button btn btn-dark" onClick={this.toggleLogin}>Login</button>
         {this.state.showLogin && <User />}
-
-        <button onClick={this.toggleCreateUser}>Create New User</button>
+        </div>
+        <div className="form-group col">
+        <button className="form-control create-button btn btn-dark" onClick={this.toggleCreateUser}>Create New User</button>
         {this.state.showCreateUser && <NewUser closeUser={this.toggleCreateUser} />}
-
+        </div>
+      </div>
         {
           this.state.showForm
             ?
