@@ -7,7 +7,7 @@ h1{
   /* font-family: 'Anton', sans-serif; */
   font-family: 'IBM Plex Mono', monospace;
   text-align: center;
-  font-size: 70px;
+  font-size: 80px;
   color: white;
 }
 
@@ -93,6 +93,15 @@ body {
     font-weight: bold;
 }
 
+.login-button{
+  background-color: #355e3b;
+  margin-bottom: 10px;
+}
+
+.create-button{
+  background-color: #355e3b;
+  margin-bottom: 10px;
+}
 
 
 
