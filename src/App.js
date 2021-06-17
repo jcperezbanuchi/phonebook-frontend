@@ -127,13 +127,11 @@ class App extends Component {
       <div className="container">
         <Header />
 
-        {
-          this.state.showForm
-            ?
+        {this.state.showForm ? (
             <Contact updateContact={this.updateContact} contactUpdate={this.state.contactUpdate} />
-            :
+        ):(
             <NewForm className="new-form" handleAddContact={this.handleAddContact} />
-        }
+        )}
         <div className="form">
           <table>
             <tbody>
@@ -159,12 +157,6 @@ class App extends Component {
               }
             </tbody>
           </table>
-          {/* <Modal
-            contacts={this.state.contacts}
-            showModal={this.state.showModal}
-            closeModal={this.showModal}
-          /> */}
-
         </div>
       </div >
     )
