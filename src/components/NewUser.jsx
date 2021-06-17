@@ -58,7 +58,7 @@ export default class NewUser extends Component {
 
                     <div className="form-group mr-2 ml-2">
                         <label className="user-name" htmlFor="name"></label>
-                        <input className="form-control" type="text" name="name" placeholder="name" id="name" onChange={this.handleChange} required />
+                        <input className="form-control" type="text" name="name" placeholder="Name" id="name" onChange={this.handleChange} required />
                     </div>
                     <div className="form-group mr-2 ml-2">
                         <label className="user-name" htmlFor="username"></label>
