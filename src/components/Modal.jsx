@@ -16,7 +16,7 @@ class Modal extends Component {
     // componentDidMount() 
 
     closeModal(e) {
-        this.props.closeModal && this.props.closeModal(e) 
+        this.props.closeModal && this.props.closeModal(e)
     }
 
     render() {
@@ -24,10 +24,10 @@ class Modal extends Component {
             return null
         }
         return (
-            <div className="modal" onClick={(e) => {this.closeModal(e)}}>
+            <div className="modal" onClick={(e) => { this.closeModal(e) }}>
                 <div className="modal-content">
                     <div>
-                        <button onClick={(e) => {this.closeModal(e)}} className="close-modal">
+                        <button onClick={(e) => { this.closeModal(e) }} className="close-modal">
                             X
                         </button>
                     </div>

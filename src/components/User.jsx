@@ -39,7 +39,6 @@ export default class User extends Component {
             }
         }).then(res => res.json())
             .then(resJson => {
-
                 this.setState({
                     username: resJson.username,
 

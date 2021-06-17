@@ -153,8 +153,7 @@ class App extends Component {
         {this.state.showLogin && <User />}
 
         <button onClick={this.toggleCreateUser}>Create New User</button>
-        {this.state.showCreateUser && <NewUser />}
-
+        {this.state.showCreateUser && <NewUser closeUser={this.toggleCreateUser} />}
 
         {
           this.state.showForm

@@ -12,7 +12,6 @@ export default class NewUser extends Component {
     constructor(props) {
         super(props)
         this.state = {
-
             username: '',
             password: ''
         }
@@ -20,11 +19,16 @@ export default class NewUser extends Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
+    closeUser(event) {
+        this.props.closeUser && this.props.closeUser(event)
+    }
+
     handleChange(event) {
         this.setState({
             [event.currentTarget.id]: event.currentTarget.value
         })
     }
+
 
     handleSubmit(e) {
         e.preventDefault()
@@ -41,14 +45,16 @@ export default class NewUser extends Component {
         }).then(res => res.json())
         this.setState({
             username: '',
-            password: ''
+            password: '',
+
         })
+
     }
 
     render() {
         return (
             <div>
-                <form className="login mb-5" onSubmit={this.handleSubmit}>
+                <form className="login mb-5" onSubmit={this.handleSubmit} >
 
                     <div className="form-group mr-2 ml-2">
                         <label className="user-name" htmlFor="name"></label>
@@ -68,7 +74,7 @@ export default class NewUser extends Component {
                         <input className="form-control" type="submit" value="Create User" />
                     </div>
                 </form>
-            </div>
+            </div >
         )
     }
 }
