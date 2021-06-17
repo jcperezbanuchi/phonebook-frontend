@@ -4,7 +4,7 @@ import NewForm from './components/NewForm';
 import Contact from './components/Contact';
 import Modal from './components/Modal'
 import User from './components/User'
-
+import NewUser from './components/NewUser'
 
 let baseURL;
 
@@ -24,7 +24,8 @@ class App extends Component {
       contacts: [],
       showForm: false,
       contactUpdate: {},
-      showLogin: true
+      showLogin: false,
+      showCreateUser: false
     }
     this.handleAddContact = this.handleAddContact.bind(this)
     this.updateContact = this.updateContact.bind(this)
@@ -32,6 +33,8 @@ class App extends Component {
     this.toggleForm = this.toggleForm.bind(this)
     this.deleteContact = this.deleteContact.bind(this)
     this.showModal = this.showModal.bind(this)
+    this.toggleLogin = this.toggleLogin.bind(this)
+    this.toggleCreateUser = this.toggleCreateUser.bind(this)
   }
   componentDidMount() {
     this.getContacts()
@@ -125,11 +128,20 @@ class App extends Component {
     console.log(e.currentTarget)
   }
 
-  toggleLogin() {
+  toggleLogin(e) {
+    e.preventDefault()
     this.setState({
       showLogin: !this.state.showLogin
     })
   }
+
+  toggleCreateUser(e) {
+    e.preventDefault()
+    this.setState({
+      showCreateUser: !this.state.showCreateUser
+    })
+  }
+
 
 
   render() {
@@ -137,11 +149,11 @@ class App extends Component {
       <div className="container">
         <Header />
 
-
-
         <button onClick={this.toggleLogin}>Login</button>
-
         {this.state.showLogin && <User />}
+
+        <button onClick={this.toggleCreateUser}>Create New User</button>
+        {this.state.showCreateUser && <NewUser />}
 
 
         {
